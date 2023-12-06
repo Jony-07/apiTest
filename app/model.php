@@ -12,7 +12,7 @@
 
         protected function db_open(){
             try {
-                $this->conn = new PDO("mysql: host=$this->db_host,dbname=$this->db_name;charset=utf8",$this->db_user,$this->db_pass);
+                $this->conn = new PDO("mysql: host=$this->db_host;dbname=$this->db_name;charset=utf8",$this->db_user,$this->db_pass);
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }
@@ -50,7 +50,7 @@
             try {
                 $this->db_open();
                 $query = "SELECT * FROM people";
-                $stmt = $this->conn->prepare();
+                $stmt = $this->conn->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $this->db_close();
