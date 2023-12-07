@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -23,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="http://localhost/apitest/" class="btn btn-outline-primary btn-block col-md-4">Return</a>
+                <a href="http://localhost/apitest/" class="btn btn-warning btn-block col-md-4">Return</a>
             </div>
         </div>
     </div>
@@ -34,7 +35,19 @@
 <script>
 Highcharts.chart('chart', {
     chart: {
-        type: 'pie'
+        type: 'pie',
+        backgroundColor: {
+            linearGradient: {
+                x1: 0,
+                y1: 0,
+                x2: 1,
+                y2: 1
+            },
+            stops: [
+                [0, 'rgba(230, 180, 210, 0.8)'],
+                [1, 'rgba(160, 140, 255, 0.8)']
+            ]
+        }
     },
     title: {
         text: 'Ages'

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/style.css">
     <?php
     include_once "resources.php";
     ?>
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="http://localhost/apitest/" class="btn btn-outline-primary btn-block col-md-4">Return</a>
+                <a href="http://localhost/apitest/" class="btn btn-warning btn-block col-md-4">Return</a>
             </div>
         </div>
         <div class="row mt-4 pt-3">
