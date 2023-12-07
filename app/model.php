@@ -60,6 +60,20 @@
             }
         }
 
+        function getAges(){
+            try {
+                $this->db_open();
+                $query = "SELECT * FROM agesView";
+                $stmt = $this->conn->prepare($query);
+                $stmt->execute();
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $this->db_close();
+                return $data;
+            } catch (Exception $e) {
+                echo  $e->getMessage();
+            }
+        }
+
     }
 
 ?>

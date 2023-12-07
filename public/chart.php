@@ -16,9 +16,14 @@
 <body>
     <div class="container">
         <div class="row justify-content-center mt-3 pt-3">
-            <div class="col-md-8 offset-2">
-                <div class="chart col-md-12">
+            <div class="col-md-8">
+                <div class="chart col-md-12" id="chart">
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="http://localhost/apitest/" class="btn btn-outline-primary btn-block col-md-4">Return</a>
             </div>
         </div>
     </div>
@@ -32,13 +37,13 @@ Highcharts.chart('chart', {
         type: 'pie'
     },
     title: {
-        text: 'Egg Yolk Composition'
+        text: 'Ages'
     },
     tooltip: {
         valueSuffix: '%'
     },
     subtitle: {
-        text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+        text: 'People'
     },
     plotOptions: {
         series: {
@@ -67,29 +72,11 @@ Highcharts.chart('chart', {
     series: [{
         name: 'Percentage',
         colorByPoint: true,
-        data: [{
-                name: 'Water',
-                y: 55.02
-            },
-            {
-                name: 'Fat',
-                sliced: true,
-                selected: true,
-                y: 26.71
-            },
-            {
-                name: 'Carbohydrates',
-                y: 1.09
-            },
-            {
-                name: 'Protein',
-                y: 15.5
-            },
-            {
-                name: 'Ash',
-                y: 1.68
+        data: [<?php
+            foreach ($people as $person) {
+                echo "{name:'".$person['age_group']."',y:".$person['quantity']."},";
             }
-        ]
+        ?>]
     }]
 });
 </script>

@@ -30,8 +30,9 @@
     }
     elseif(isset($_POST['chart'])){
         $model = new Model();
-        $people = $model->getData();
+        $people = $model->getAges();
         $viewBag['people'] = $people;
+        //var_dump($people);
         $controller->render("chart",$viewBag);
     }
 
